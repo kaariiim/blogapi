@@ -1,1 +1,3 @@
-export interface Medias {}
+export interface Media {
+    media: string;
+}
