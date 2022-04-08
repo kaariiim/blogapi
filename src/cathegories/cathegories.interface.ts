@@ -6,5 +6,5 @@ export interface Cathegorie {
     description : string ;
     media : Media ;
     user : User ;
-    publish : boolean;
+    publish ?: boolean;
 }
