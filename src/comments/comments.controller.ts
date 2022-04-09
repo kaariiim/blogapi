@@ -8,7 +8,6 @@ import {
     Put,
     Query,
   } from '@nestjs/common';
-import { Comment } from './comments.interface';
   
   
   import { CommentService } from './comments.service';
