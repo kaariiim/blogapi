@@ -11,13 +11,9 @@ import { UserModule } from './users/users.module';
     MongooseModule.forRoot('mongodb://localhost:27017/blogdb'),
     UserModule,
     MediaModule,
-    CommentModule,
-    CathegorieModule,
     ArticleModule,
     CommentModule,
     CathegorieModule,
-    ArticleModule,
-    MediaModule,
   ],
 })
 export class AppModule {}
