@@ -8,6 +8,7 @@ import {
     Put,
     Query,
   } from '@nestjs/common';
+import { Comment } from './comments.interface';
   
   
   import { CommentService } from './comments.service';
@@ -23,7 +24,7 @@ import UpdateCommentDto from './dto/update-comment.dto';
     }
   
     @Post()
-    create(@Body() createCommentDto: CreateCommentDto): Promise<Comment> {
+    create(@Body() createCommentDto: CreateCommentDto): Promise<any> {
       return this.commentService.create(createCommentDto);
     }
   

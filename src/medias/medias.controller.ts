@@ -5,24 +5,17 @@ import {
     Get,
     Param,
     Post,
-    Put,
-    UseGuards,
+    Put
   } from '@nestjs/common';
-  import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
   import CreateMediaDto from './dto/create-media.dto';
   import UpdateMediaDto from './dto/update-media.dto';
   import { Media } from './schemas/media.schemas';
   import { MediaService } from './medias.service';
   
   @Controller('media')
-  @UseGuards(JwtAuthGuard)
   export class MediaController {
     constructor(private readonly mediaService: MediaService) {}
   
-    @Get(':id')
-    findOne(@Param('id') _id: string) {
-      return this.mediaService.findOne(_id);
-    }
   
     @Get()
     findAll() {

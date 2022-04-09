@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Document,Types } from 'mongoose';
 import { Media } from 'src/medias/schemas/media.schemas';
 import { User } from 'src/users/schemas/user.schemas';
 export type CathegorieDocument = Cathegorie & Document;
@@ -17,3 +17,4 @@ export class Cathegorie {
   @Prop({ required: true, type: Types.ObjectId, ref: 'User' })
   user: User;
 }
+export const CathegorieSchema = SchemaFactory.createForClass(Cathegorie);

@@ -23,7 +23,7 @@ import UpdateArticleDto from './dto/update-article.dto';
     }
   
     @Post()
-    create(@Body() createArticleDto: CreateArticleDto): Promise<Article> {
+    create(@Body() createArticleDto: CreateArticleDto): Promise<any> {
       return this.articleService.create(createArticleDto);
     }
   

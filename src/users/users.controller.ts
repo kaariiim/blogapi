@@ -8,21 +8,15 @@ import {
     Put,
     UseGuards,
   } from '@nestjs/common';
-  import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
   import CreateUserDto from './dto/create-user.dto';
   import UpdateUserDto from './dto/update-user.dto';
-  import { User } from './schemas/user.schemas';
+import { User } from './users.interface';
   import { UserService } from './users.service';
   
   @Controller('user')
-  @UseGuards(JwtAuthGuard)
   export class UserController {
     constructor(private readonly userService: UserService) {}
-  
-    @Get(':id')
-    findOne(@Param('id') _id: string) {
-      return this.userService.findOne(_id);
-    }
+
   
     @Get()
     findAll() {
@@ -30,7 +24,7 @@ import {
     }
   
     @Post()
-    create(@Body() createUserDto: CreateUserDto): Promise<User> {
+    create(@Body() createUserDto: CreateUserDto): Promise<any> {
       return this.userService.create(createUserDto);
     }
   

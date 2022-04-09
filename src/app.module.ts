@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-
-import { APP_INTERCEPTOR } from '@nestjs/core';
-import { CurrentUserInterceptor } from './auth/user.interceptor';
-import { CommentsModule } from './comments/comments.module';
-import { CathegoriesModule } from './cathegories/cathegories.module';
-import { ArticlesModule } from './articles/articles.module';
+import { CommentModule } from './comments/comments.module';
+import { CathegorieModule } from './cathegories/cathegories.module';
+import { ArticleModule } from './articles/articles.module';
+import { MediaModule } from './medias/medias.module';
+import { UserModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -15,16 +14,10 @@ import { ArticlesModule } from './articles/articles.module';
     CommentModule,
     CathegorieModule,
     ArticleModule,
-    AuthModule,
-    CommentsModule,
-    CathegoriesModule,
-    ArticlesModule,
-  ],
-  providers: [
-    {
-      provide: APP_INTERCEPTOR,
-      useClass: CurrentUserInterceptor,
-    },
+    CommentModule,
+    CathegorieModule,
+    ArticleModule,
+    MediaModule,
   ],
 })
 export class AppModule {}

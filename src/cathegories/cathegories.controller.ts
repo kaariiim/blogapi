@@ -23,8 +23,8 @@ import UpdateCathegorieDto from './dto/update-cathegorie.dto';
     }
   
     @Post()
-    create(@Body() createCathegorieDto: CreateCathegorieDto): Promise<Cathegorie> {
-      return this.cathegorieService.create(createCathegorieDto);
+    create(@Body() CreateCathegorieDto: CreateCathegorieDto): Promise<any> {
+      return this.cathegorieService.create(CreateCathegorieDto);
     }
   
     @Put(':id')
