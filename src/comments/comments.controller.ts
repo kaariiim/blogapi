@@ -13,6 +13,7 @@ import {
   import { CommentService } from './comments.service';
 import CreateCommentDto from './dto/create-comment.dto';
 import UpdateCommentDto from './dto/update-comment.dto';
+import { Comment } from './schemas/comment.schemas';
   
   @Controller('comment')
   export class CommentController {
@@ -23,7 +24,7 @@ import UpdateCommentDto from './dto/update-comment.dto';
     }
   
     @Post()
-    create(@Body() createCommentDto: CreateCommentDto): Promise<any> {
+    create(@Body() createCommentDto: CreateCommentDto): Promise<Comment> {
       return this.commentService.create(createCommentDto);
     }
   

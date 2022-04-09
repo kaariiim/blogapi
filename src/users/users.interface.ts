@@ -1,8 +1,8 @@
 export interface User {
     firstName:string;
     lastName:string;
-    avatar:string;
+    avatar?:string;
     email:string;
     password:string;
-    publish:boolean;
+    publish?:boolean;
 }

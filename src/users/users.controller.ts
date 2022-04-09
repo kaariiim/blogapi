@@ -10,7 +10,7 @@ import {
   } from '@nestjs/common';
   import CreateUserDto from './dto/create-user.dto';
   import UpdateUserDto from './dto/update-user.dto';
-import { User } from './users.interface';
+import { User } from './schemas/user.schemas';
   import { UserService } from './users.service';
   
   @Controller('user')
@@ -24,7 +24,7 @@ import { User } from './users.interface';
     }
   
     @Post()
-    create(@Body() createUserDto: CreateUserDto): Promise<any> {
+    create(@Body() createUserDto: CreateUserDto): Promise<User> {
       return this.userService.create(createUserDto);
     }
   

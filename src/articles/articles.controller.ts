@@ -8,7 +8,7 @@ import {
     Put,
     Query,
   } from '@nestjs/common';
-import { Article } from './articles.interface';
+import { Article } from './schemas/article.schemas';
 import { ArticleService } from './articles.service';
 import CreateArticleDto from './dto/creat-article.dto';
 import UpdateArticleDto from './dto/update-article.dto';
@@ -23,7 +23,7 @@ import UpdateArticleDto from './dto/update-article.dto';
     }
   
     @Post()
-    create(@Body() createArticleDto: CreateArticleDto): Promise<any> {
+    create(@Body() createArticleDto: CreateArticleDto): Promise<Article> {
       return this.articleService.create(createArticleDto);
     }
   

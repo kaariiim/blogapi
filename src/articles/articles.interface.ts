@@ -7,6 +7,6 @@ export interface Article {
  content :string;
  media : Media;
  user : User;
- publish : boolean;
+ publish ?: boolean;
  cathegorie : Cathegorie;   
 }

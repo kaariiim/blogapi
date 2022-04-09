@@ -8,7 +8,7 @@ import {
     Put,
     Query,
   } from '@nestjs/common';
-import { Cathegorie } from './cathegories.interface';
+import { Cathegorie } from './schemas/cathegorie.schemas';
 import { CathegorieService } from './cathegories.service';
 import CreateCathegorieDto from './dto/creat-cathegorie.dto';
 import UpdateCathegorieDto from './dto/update-cathegorie.dto';
@@ -23,7 +23,7 @@ import UpdateCathegorieDto from './dto/update-cathegorie.dto';
     }
   
     @Post()
-    create(@Body() CreateCathegorieDto: CreateCathegorieDto): Promise<any> {
+    create(@Body() CreateCathegorieDto: CreateCathegorieDto): Promise<Cathegorie> {
       return this.cathegorieService.create(CreateCathegorieDto);
     }
   
